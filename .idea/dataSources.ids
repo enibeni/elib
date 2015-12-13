@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - library@localhost" uuid="71cd6179-98fc-4ef0-9d37-caf5ebfa94e2">
+    <database-info product="MySQL" version="5.6.27-0ubuntu1" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.33 ( Revision: alexander.soklakov@oracle.com-20140908134200-8ukofe1izi0r2b63 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
+    <database-model serializer="dbm" rdbms="MYSQL" format-version="2.2">
+      <schema id="1" name="library"/>
+      <table id="2" parent="1" name="authors"/>
+      <table id="3" parent="1" name="books"/>
+      <column id="4" parent="2" name="author_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="5" parent="2" name="fname">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <key id="6" parent="2" name="PRIMARY">
+        <columns>author_id</columns>
+        <primary>1</primary>
+      </key>
+      <column id="7" parent="3" name="book_id">
+        <mandatory>1</mandatory>
+        <data-type>int(11)</data-type>
+      </column>
+      <column id="8" parent="3" name="title">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="9" parent="3" name="author_id">
+        <data-type>int(11)</data-type>
+      </column>
+      <key id="10" parent="3" name="PRIMARY">
+        <columns>book_id</columns>
+        <primary>1</primary>
+      </key>
+      <foreign-key id="11" parent="3" name="fk_books">
+        <columns>author_id</columns>
+        <ref-key>authors.PRIMARY</ref-key>
+        <cascade-update-rule>restrict</cascade-update-rule>
+        <cascade-delete-rule>restrict</cascade-delete-rule>
+      </foreign-key>
+    </database-model>
+  </data-source>
+</component>

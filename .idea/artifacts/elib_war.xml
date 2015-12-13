@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="elib:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="elib.war">
+      <element id="artifact" artifact-name="elib:war exploded" />
+    </root>
+  </artifact>
+</component>
